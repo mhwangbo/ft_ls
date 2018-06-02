@@ -6,13 +6,16 @@
 #    By: mhwangbo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/09 17:05:50 by mhwangbo          #+#    #+#              #
-#    Updated: 2018/05/23 22:38:31 by mhwangbo         ###   ########.fr        #
+#    Updated: 2018/06/01 18:39:20 by mhwangbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 
-SRC = ls_main.c
+SRC = ls_main.c \
+	  ls_dir_read.c \
+	  ls_zero.c \
+	  ls_two.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -26,7 +29,7 @@ LIBS = $(LIBDIR)/libftprintf.a
 HEADER = -I includes -I $(LIBDIR)
 
 CC = gcc
-CFLAGS = -c -Wall -Wextra -Werror
+CFLAGS = -c -Wall -Wextra -Werror 
 
 .PHONY: all clean fclean re
 .SUFFIXES: .c .o
